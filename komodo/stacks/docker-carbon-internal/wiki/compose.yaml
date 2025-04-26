@@ -32,4 +32,4 @@ services:
 
 networks:
   wiki:
-    name: wiki_network
+    name: wiki
