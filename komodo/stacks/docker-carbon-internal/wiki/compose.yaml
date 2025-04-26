@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: wiki_postgres
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: wikijsrocks
+      POSTGRES_USER: wikijs
+    restart: always
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    networks:
+      - wiki
+
+  wiki:
+    image: ghcr.io/requarks/wiki
+    container_name: wiki_app
+    depends_on:
+      - postgres
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: wikijs
+      DB_PASS: wikijsrocks
+      DB_NAME: wiki
+    restart: always
+    ports:
+      - "5005:3000"
+    networks:
+      - wiki
+
+networks:
+  wiki:
+    name: wiki_network
