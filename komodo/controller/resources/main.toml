@@ -1,1 +1,10 @@
-## Add resources to get started
+[[resource_sync]]
+name = "config"
+[resource_sync.config]
+repo = "LukeHallett/homelab"
+git_account = "LukeHallett"
+resource_path = [
+  "komodo/controller/resources/main.toml"
+]
+managed = true
+delete = true
