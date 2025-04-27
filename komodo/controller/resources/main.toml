@@ -1,3 +1,11 @@
+[[server]]
+name = "docker-carbon-internal"
+[server.config]
+address = "https://periphery:8120"
+enabled = true
+
+##
+
 [[resource_sync]]
 name = "config"
 [resource_sync.config]
