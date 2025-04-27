@@ -2,7 +2,7 @@
     admin off
 }
 
-http://0.0.0.0:5022 {
+:5022 {
     root * /var/www/html/public
     encode gzip
 
