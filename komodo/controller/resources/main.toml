@@ -6,6 +6,25 @@ enabled = true
 
 ##
 
+[[stack]]
+name = "pelican"
+[stack.config]
+server = "docker-carbon-internal"
+git_account = "LukeHallett"
+repo = "LukeHallett/homelab"
+run_directory = "komodo/stacks/docker-carbon-internal/pelican"
+
+##
+
+[[stack]]
+name = "wiki"
+[stack.config]
+server = "docker-carbon-internal"
+repo = "LukeHallett/homelab"
+run_directory = "komodo/stacks/docker-carbon-internal/wiki"
+
+##
+
 [[resource_sync]]
 name = "config"
 [resource_sync.config]
